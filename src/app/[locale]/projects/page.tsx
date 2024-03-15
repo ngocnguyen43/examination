@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react";
-import TableProjects from "../../../components/TableProject";
+import TableProjects from "../../TableProject";
 type ProjectType = {
     "id": number,
     "project_name": string,

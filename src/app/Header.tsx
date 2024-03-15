@@ -1,16 +1,14 @@
-"use client"
-
-import { ModeToggle } from "@/components/ModeToggle"
+import { ModeToggle } from "./ModeToggle"
 import LocalSwitcher from '@/components/locale-switcher'
-import { Separator } from "./ui/separator"
-import { useRouter } from "next/navigation"
+import { Separator } from "../components/ui/separator"
+import { redirect } from "next/navigation"
 import { useTranslations, NextIntlClientProvider } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-export default function Header() {
+
+export default async function Header() {
     const ac = typeof window !== "undefined" ? window.localStorage.getItem('__ac') : false;
-    const router = useRouter()
-    const t = useTranslations('Header');
-
+    // const t = await getTranslations("Header")
     return (
         <div className="w-full flex items-center justify-between h-[10%] p-16 py-8">
             <div className="flex h-full basis-[70%] items-center gap-8 justify-start">
@@ -23,7 +21,7 @@ export default function Header() {
                                 e.preventDefault()
                                 localStorage.removeItem("__ac")
                                 localStorage.removeItem("__rc")
-                                router.push("/")
+                                redirect("/")
                             }}></a>
                         </h4>
                     </>

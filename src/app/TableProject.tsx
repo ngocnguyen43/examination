@@ -1,5 +1,5 @@
-import { DataTable } from "./table/data-table";
-import { Payment, columns } from "./table/column"
+import { DataTable } from "../components/table/data-table";
+import { Payment, columns } from "../components/table/column"
 export default function TableProjects({ data }: { data: Payment[] }) {
 
     return (

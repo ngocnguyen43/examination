@@ -9,8 +9,6 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center p-16 py-8">
-      {/* <Header /> */}
-      {/* <h1>{t('title')}</h1> */}
       <LoginForm />
     </main>
   );

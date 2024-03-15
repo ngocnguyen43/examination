@@ -45,7 +45,7 @@ export default function LocalSwitcher() {
                         router.replace(`/vi`);
                     });
                 }}>
-                    Tieng Viet
+                    Tiếng Việt
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>

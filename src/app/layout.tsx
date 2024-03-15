@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider"
 
 import { cn } from "@/lib/utils"
-import Header from "@/components/Header";
+import Header from "./Header";
 
 
 
