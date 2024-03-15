@@ -1,12 +1,11 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
-import { ArrowUpDown, MoreHorizontal } from "lucide-react"
+import { ArrowUpDown, } from "lucide-react"
 import { Button } from "../ui/button"
+import { useTranslations } from "next-intl"
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-export type Payment = {
+export type ColumnName = {
     "id": number,
     "project_name": string,
     "project_domain": "string",
@@ -18,13 +17,14 @@ export type Payment = {
     }[]
 }
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<ColumnName>[] = [
     {
         accessorKey: "id",
         header: ({ column }) => {
             return (
                 <Button
                     variant="ghost"
+                    className="!p-0"
                     onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 >
                     ID
@@ -36,12 +36,14 @@ export const columns: ColumnDef<Payment>[] = [
     {
         accessorKey: "project_name",
         header: ({ column }) => {
+            const t = useTranslations("Table")
             return (
                 <Button
                     variant="ghost"
+                    className="!p-0"
                     onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 >
-                    Project Name
+                    {t("name")}
                     <ArrowUpDown className="ml-2 h-4 w-4" />
                 </Button>
             )
@@ -49,17 +51,26 @@ export const columns: ColumnDef<Payment>[] = [
     },
     {
         accessorKey: "project_domain",
-        header: "Project Domain",
+        header: () => {
+            const t = useTranslations("Table")
+            return (
+                <>
+                    {t("domain")}
+                </>
+            )
+        },
     },
     {
         accessorKey: "last_accessed",
         header: ({ column }) => {
+            const t = useTranslations("Table")
             return (
                 <Button
                     variant="ghost"
+                    className="!p-0"
                     onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 >
-                    Last Accessed
+                    {t("access")}
                     <ArrowUpDown className="ml-2 h-4 w-4" />
                 </Button>
             )

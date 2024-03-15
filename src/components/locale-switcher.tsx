@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { ChangeEvent, useTransition } from 'react';
 import { GlobeIcon } from "@radix-ui/react-icons"
 
@@ -17,13 +17,12 @@ export default function LocalSwitcher() {
     const [isPending, startTransition] = useTransition();
     const router = useRouter();
     // const localActive = useLocale();
+    const path = usePathname()
+    // console.log(path);
 
-    const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        const nextLocale = e.target.value;
-        startTransition(() => {
-            router.replace(`/${nextLocale}`);
-        });
-    };
+    const urls = path.split("/")
+    // console.log((urls.length > 2) ? urls.slice(2).join("/") : "");
+
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -34,15 +33,22 @@ export default function LocalSwitcher() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
                 <DropdownMenuItem onClick={() => {
+                    // const forward = `/en/` + (urls.length > 2) ? urls.slice(2).join("/") : ""
+                    urls[1] = "en"
                     startTransition(() => {
-                        router.replace(`/en`);
+                        router.replace(urls.join("/"));
                     });
                 }}>
                     English
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => {
+                    // const forward = `/vi/` + (urls.length > 2) ? urls.slice(2).join("/") : ""
+
                     startTransition(() => {
-                        router.replace(`/vi`);
+                        urls[1] = "vi"
+                        startTransition(() => {
+                            router.replace(urls.join("/"));
+                        });
                     });
                 }}>
                     Tiếng Việt

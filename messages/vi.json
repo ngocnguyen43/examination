@@ -13,7 +13,8 @@
     "system":"Tự Động"
   },
   "Header":{
-    "logout":"Đăng Xuất"
+    "logout":"Đăng Xuất",
+    "title": "Trang Chủ"
   },
   "Table":{
     "name":"Tên Dự Án",

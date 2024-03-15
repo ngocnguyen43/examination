@@ -13,7 +13,8 @@
       "system":"System"
     },
     "Header":{
-      "logout":"Logout"
+      "logout":"Logout",
+      "title": "Home"
     },
     "Table":{
       "name":"Project Name",
