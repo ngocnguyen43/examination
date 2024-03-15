@@ -1,5 +1,19 @@
 {
-    "Index": {
-      "title": "VCL"
-    }
+  "Index": {
+    "title": "Nhà"
+  },
+  "Login": {
+    "email":"Email",
+    "password":"Mật Khẩu",
+    "login": "Đăng Nhập"
+  },
+  "Theme":{
+    "dark":"Tối",
+    "light":"Sáng",
+    "System":"Tự Động"
+  },
+  "Header":{
+    "logout":"Đăng Xuất"
   }
+
+}

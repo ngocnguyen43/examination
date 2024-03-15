@@ -27,8 +27,8 @@ export default function LocalSwitcher() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                    <GlobeIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all " />
+                <Button variant="outline" size="icon" className='w-12 h-12'>
+                    <GlobeIcon className="h-[1.5rem] w-[1.5rem] rotate-0 scale-100 transition-all " />
                     <span className="sr-only">Switch Locale</span>
                 </Button>
             </DropdownMenuTrigger>

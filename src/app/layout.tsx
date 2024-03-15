@@ -1,10 +1,11 @@
-
+import "./globals.css"
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider"
 
 import { cn } from "@/lib/utils"
+import Header from "@/components/Header";
 
 
 
@@ -28,7 +29,7 @@ export default function RootLayout({
     return (
         <html lang={locale} suppressHydrationWarning>
             <body className={cn(
-                "min-h-screen bg-background font-sans antialiased",
+                "min-h-screen bg-background font-sans antialiased ",
                 fontSans.variable
             )}>          <ThemeProvider
                 attribute="class"
@@ -36,6 +37,7 @@ export default function RootLayout({
                 enableSystem
                 disableTransitionOnChange
             >
+                    <Header />
                     {children}
                 </ThemeProvider></body>
         </html>

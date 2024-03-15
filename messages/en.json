@@ -1,5 +1,19 @@
 {
     "Index": {
-      "title": "Hello world!"
+      "title": "Home"
+    },
+    "Login": {
+      "email":"Email",
+      "password":"Password",
+      "login": "Login"
+    },
+    "Theme":{
+      "dark":"Dark",
+      "light":"Light",
+      "System":"System"
+    },
+    "Header":{
+      "logout":"Logout"
     }
+
   }
