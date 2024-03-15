@@ -1,10 +1,10 @@
 "use client"
-import Image from "next/image";
-import { useTranslations } from 'next-intl';
 
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react";
-import TableProjects from "../../TableProject";
+import TableProjects from "../../../components/TableProject";
+import { useTranslations } from "next-intl";
+
 type ProjectType = {
     "id": number,
     "project_name": string,
@@ -21,8 +21,8 @@ type ProjectType = {
 export default function Home() {
     // const t = useTranslations('Index');
     const router = useRouter()
-
-    const ac = localStorage.getItem('__ac')
+    // unstable_setRequestLocale(locale);
+    const ac = typeof window !== 'undefined' ? localStorage.getItem('__ac') : false
     const [data, setData] = useState<{
         count: number,
         results: ProjectType[]

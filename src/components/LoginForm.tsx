@@ -26,7 +26,7 @@ const formSchema = z.object({
     }),
 })
 
-export function LoginForm() {
+export function LoginForm({ email, password, button }: { email: string, password: string, button: string }) {
     const router = useRouter()
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -53,6 +53,7 @@ export function LoginForm() {
             localStorage.setItem("__ac", access_token)
             localStorage.setItem("__rc", refresh_token)
             router.push(`/${localActive}/projects`,)
+            router.refresh()
         }
 
     }
@@ -64,7 +65,7 @@ export function LoginForm() {
                     name="email"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Email</FormLabel>
+                            <FormLabel>{email}</FormLabel>
                             <FormControl>
                                 <Input placeholder="example@email.com" {...field} />
                             </FormControl>
@@ -77,7 +78,7 @@ export function LoginForm() {
                     name="password"
                     render={({ field }) => (
                         <FormItem>
-                            <FormLabel>Password</FormLabel>
+                            <FormLabel>{password}</FormLabel>
                             <FormControl>
                                 <Input  {...field} type="password" />
                             </FormControl>
@@ -85,7 +86,7 @@ export function LoginForm() {
                         </FormItem>
                     )}
                 />
-                <Button type="submit">Login</Button>
+                <Button type="submit">{button}</Button>
             </form>
         </Form>
     )

@@ -5,15 +5,20 @@
     "Login": {
       "email":"Email",
       "password":"Password",
-      "login": "Login"
+      "button": "Login"
     },
     "Theme":{
       "dark":"Dark",
       "light":"Light",
-      "System":"System"
+      "system":"System"
     },
     "Header":{
       "logout":"Logout"
+    },
+    "Table":{
+      "name":"Project Name",
+      "domain":"Project Domain",
+      "access":"Last Accessed"
     }
 
   }

@@ -1,15 +1,14 @@
 import Image from "next/image";
-import { useTranslations } from 'next-intl';
 import { LoginForm } from "../../components/LoginForm";
+import { useTranslations } from "next-intl";
 
-import { useRouter } from "next/router"
 
 export default function Home() {
-  const t = useTranslations('Index');
-
+  // unstable_setRequestLocale(locale);
+  const l = useTranslations("Login")
   return (
     <main className="flex flex-col items-center p-16 py-8">
-      <LoginForm />
+      <LoginForm email={l("email")} password={l("password")} button={l("button")} />
     </main>
   );
 }

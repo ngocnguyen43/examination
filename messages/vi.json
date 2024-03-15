@@ -5,15 +5,19 @@
   "Login": {
     "email":"Email",
     "password":"Mật Khẩu",
-    "login": "Đăng Nhập"
+    "button": "Đăng Nhập"
   },
   "Theme":{
     "dark":"Tối",
     "light":"Sáng",
-    "System":"Tự Động"
+    "system":"Tự Động"
   },
   "Header":{
     "logout":"Đăng Xuất"
+  },
+  "Table":{
+    "name":"Tên Dự Án",
+    "domain":"Tên Miền",
+    "access":"Lần Cuối Truy Cập"
   }
-
 }
