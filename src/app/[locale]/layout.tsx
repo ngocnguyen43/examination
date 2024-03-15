@@ -1,10 +1,9 @@
 import { Inter } from "next/font/google";
 import Header from "../../components/Header";
-import dynamic from 'next/dynamic';
 import "../globals.css"
 import { ThemeProvider } from "next-themes";
 import { cn } from "../../lib/utils";
-import { NextIntlClientProvider, useMessages, useTranslations } from "next-intl";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 // Can be imported from a shared config
 const locales = ['en', 'vi'];
 

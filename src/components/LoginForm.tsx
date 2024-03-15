@@ -34,6 +34,8 @@ export function LoginForm({ email, password, button }: { email: string, password
             email: "",
         },
     })
+    const { formState } = form
+    const { isSubmitting, isDirty, isValid } = formState;
     const localActive = useLocale();
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
@@ -86,7 +88,8 @@ export function LoginForm({ email, password, button }: { email: string, password
                         </FormItem>
                     )}
                 />
-                <Button type="submit">{button}</Button>
+                <Button type="submit" disabled={!isDirty || !isValid || isSubmitting}
+                >{button}</Button>
             </form>
         </Form>
     )
