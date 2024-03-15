@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { useRouter } from "next/navigation"
 import { useLocale } from "next-intl"
+import { LoaderCircle } from "lucide-react"
 
 const formSchema = z.object({
     email: z.string().min(1, {
@@ -60,16 +61,16 @@ export function LoginForm({ email, password, button }: { email: string, password
 
     }
     return (
-        <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <Form {...form} >
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[25%]" >
                 <FormField
                     control={form.control}
                     name="email"
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel>{email}</FormLabel>
-                            <FormControl>
-                                <Input placeholder="example@email.com" {...field} />
+                            <FormControl className="h-14">
+                                <Input placeholder="example@email.com" {...field} className="text-xl" />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -81,15 +82,16 @@ export function LoginForm({ email, password, button }: { email: string, password
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel>{password}</FormLabel>
-                            <FormControl>
-                                <Input  {...field} type="password" />
+                            <FormControl className="h-14">
+                                <Input  {...field} type="password" className="text-xl" />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
                     )}
                 />
-                <Button type="submit" disabled={!isDirty || !isValid || isSubmitting}
-                >{button}</Button>
+                <Button className="h-12 disabled:cursor-not-allowed w-[150px]" type="submit" disabled={!isDirty || !isValid || isSubmitting}
+                >{isSubmitting ? <LoaderCircle className="animate-spin" />
+                    : button}</Button>
             </form>
         </Form>
     )
