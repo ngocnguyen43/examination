@@ -19,6 +19,10 @@
   "Table":{
     "name":"Tên Dự Án",
     "domain":"Tên Miền",
-    "access":"Lần Cuối Truy Cập"
+    "access":"Lần Cuối Truy Cập",
+    "previous":"Trang trước",
+    "next":"Trang sau",
+    "filter":"Tìm kiếm theo tên"
+
   }
 }

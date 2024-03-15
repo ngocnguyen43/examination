@@ -19,7 +19,10 @@
     "Table":{
       "name":"Project Name",
       "domain":"Project Domain",
-      "access":"Last Accessed"
+      "access":"Last Accessed",
+      "previous":"Previous",
+      "next":"Next",
+      "filter":"Filter by name ..."
     }
 
   }

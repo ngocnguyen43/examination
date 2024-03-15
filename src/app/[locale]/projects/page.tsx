@@ -49,12 +49,12 @@ export default function Home() {
         if (!ac) {
             router.push(`/`,)
         }
-    }, [ac])
+    }, [ac, router])
     return (
         <>
             {
-                data &&
-                <TableProjects data={data.results} />
+                data ?
+                    <TableProjects data={data.results} /> : null
             }
         </>
     );
